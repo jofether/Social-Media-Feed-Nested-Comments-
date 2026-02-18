@@ -1,71 +1,163 @@
 import React from 'react';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import RightSidebar from './components/RightSidebar';
+import CreatePost from './components/CreatePost';
+import Post from './components/Post';
+
+const postsData = [
+  {
+    author: 'Sarah Chen',
+    handle: 'sarahchen',
+    initials: 'SC',
+    avatarBg: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    verified: true,
+    timestamp: '2 hours ago',
+    content: 'Just shipped a major performance update to our search infrastructure! Reduced query latency by 40% with HNSW indexing. Our users are going to love this speed boost. 🚀',
+    image: 'Performance Dashboard',
+    imageEmoji: '📊',
+    views: '1.2M',
+    retweets: '2.4K',
+    replies: '487',
+    likes: '8.9K',
+    hashtags: ['#WebDevelopment', '#Performance', '#React'],
+    comments: [
+      {
+        author: 'Mark Johnson',
+        handle: 'markjohnson',
+        initials: 'MJ',
+        avatarBg: 'bg-gradient-to-br from-blue-400 to-cyan-500',
+        timestamp: '1h ago',
+        text: 'Wow! What indexing method did you end up using? Was considering FAISS vs HNSW myself.',
+        likes: '234',
+        replies: [],
+      },
+      {
+        author: 'Alex Dev',
+        handle: 'alexdev',
+        initials: 'AD',
+        avatarBg: 'bg-gradient-to-br from-orange-400 to-red-500',
+        timestamp: '45m ago',
+        text: 'This is amazing! Do you have any open positions in your team? 😄',
+        likes: '156',
+        replies: [
+          {
+            author: 'Sarah Chen',
+            handle: 'sarahchen',
+            initials: 'SC',
+            avatarBg: 'bg-gradient-to-br from-purple-400 to-pink-500',
+            timestamp: '30m ago',
+            text: 'Thanks! We\'re always looking for talented engineers. Check out our careers page!',
+            likes: '89',
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    author: 'Emma Wilson',
+    handle: 'emmawilson',
+    initials: 'EW',
+    avatarBg: 'bg-gradient-to-br from-teal-400 to-green-500',
+    verified: false,
+    timestamp: '4 hours ago',
+    content: 'Finally finished refactoring our CSS architecture! Went from BEM to Tailwind CSS and I\'m never looking back. The developer experience improvement is INSANE. Code is more maintainable, components are reusable, and the learning curve is so much gentler for new team members.',
+    image: 'CSS Architecture',
+    imageEmoji: '🎨',
+    views: '890K',
+    retweets: '1.2K',
+    replies: '312',
+    likes: '5.6K',
+    hashtags: ['#CSS', '#TailwindCSS', '#WebDev'],
+    comments: [
+      {
+        author: 'James Miller',
+        handle: 'jamesmiller',
+        initials: 'JM',
+        avatarBg: 'bg-gradient-to-br from-indigo-400 to-purple-500',
+        timestamp: '3h ago',
+        text: 'Tailwind is absolute game-changer! Our design system matured so much faster.',
+        likes: '412',
+        replies: [
+          {
+            author: 'Emma Wilson',
+            handle: 'emmawilson',
+            initials: 'EW',
+            avatarBg: 'bg-gradient-to-br from-teal-400 to-green-500',
+            timestamp: '2h ago',
+            text: 'Right?! And the utility-first approach makes it so easy to prototype quickly.',
+            likes: '267',
+            replies: [],
+          },
+          {
+            author: 'Lisa Park',
+            handle: 'lisapark',
+            initials: 'LP',
+            avatarBg: 'bg-gradient-to-br from-pink-400 to-rose-500',
+            timestamp: '1h ago',
+            text: 'The only downside is the file size, but with tree-shaking it\'s not even noticeable.',
+            likes: '189',
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    author: 'David Kumar',
+    handle: 'davidkumar',
+    initials: 'DK',
+    avatarBg: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+    verified: false,
+    timestamp: '6 hours ago',
+    content: 'Building a real-time collaboration feature with WebSockets. The synchronization challenges are real, but implementing eventual consistency patterns has been fascinating. This is why I love working on systems design problems!',
+    image: null,
+    views: '345K',
+    retweets: '892',
+    replies: '234',
+    likes: '3.2K',
+    hashtags: ['#SystemsDesign', '#WebSockets', '#RealTime'],
+    comments: [
+      {
+        author: 'Nina Patel',
+        handle: 'ninapatel',
+        initials: 'NP',
+        avatarBg: 'bg-gradient-to-br from-lime-400 to-emerald-500',
+        timestamp: '5h ago',
+        text: 'Have you considered using Operational Transformation vs CRDT for your sync strategy?',
+        likes: '178',
+        replies: [
+          {
+            author: 'David Kumar',
+            handle: 'davidkumar',
+            initials: 'DK',
+            avatarBg: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+            timestamp: '4h ago',
+            text: 'Great question! We started with OT but switched to CRDT. The merge semantics are much cleaner.',
+            likes: '234',
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+];
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 font-sans">
-      <div className="max-w-2xl mx-auto space-y-6">
-        
-        {/* MAIN POST */}
-        <div className="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
-          <div className="p-4 flex space-x-3">
-            <div className="w-10 h-10 rounded-full bg-blue-500 flex-shrink-0"></div>
-            <div>
-              <p className="font-bold text-gray-900">Sarah Engineering</p>
-              <p className="text-xs text-gray-500">2 hours ago</p>
-            </div>
-          </div>
-          <div className="px-4 pb-2 text-gray-800 leading-relaxed">
-            Just pushed the new multimodal search update! The latency dropped by 40% after we optimized the vector indexing. 🚀
-          </div>
-          <div className="h-64 bg-gray-200 mt-2 flex items-center justify-center text-gray-500">
-            [Chart Image Placeholder]
-          </div>
-          <div className="p-4 border-t border-gray-100 flex justify-between text-gray-500 text-sm">
-            <span>24 Likes</span>
-            <span>5 Comments</span>
-          </div>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <Sidebar />
+      <RightSidebar />
 
-        {/* COMMENT SECTION */}
-        <div className="bg-white rounded-xl shadow border border-gray-200 p-4 space-y-6">
-          <h3 className="font-bold text-gray-700">Comments</h3>
-
-          {/* Comment 1 (Parent) */}
-          <div className="flex space-x-3">
-            <div className="w-8 h-8 rounded-full bg-purple-500 flex-shrink-0"></div>
-            <div className="flex-1 bg-gray-50 p-3 rounded-lg rounded-tl-none">
-              <p className="text-sm font-bold text-gray-900">Mark Dev</p>
-              <p className="text-sm text-gray-700">Incredible work! Did you use FAISS for the indexing?</p>
-            </div>
-          </div>
-
-          {/* Comment 1.1 (Child - Indented) */}
-          <div className="flex space-x-3 ml-12">
-            <div className="w-8 h-8 rounded-full bg-blue-500 flex-shrink-0"></div>
-            <div className="flex-1 bg-blue-50 p-3 rounded-lg rounded-tl-none border border-blue-100">
-              <p className="text-sm font-bold text-indigo-900">Sarah Engineering</p>
-              <p className="text-sm text-indigo-800">Yes! We switched to HNSW index type for better recall.</p>
-            </div>
-          </div>
-
-          {/* Comment 2 (Parent) */}
-          <div className="flex space-x-3">
-            <div className="w-8 h-8 rounded-full bg-green-500 flex-shrink-0"></div>
-            <div className="flex-1 bg-gray-50 p-3 rounded-lg rounded-tl-none">
-              <p className="text-sm font-bold text-gray-900">Junior Dev</p>
-              <p className="text-sm text-gray-700">I'm still trying to understand how the gating network works. Is it open source?</p>
-            </div>
-          </div>
-
-           {/* Comment 2.1 (Child) */}
-           <div className="flex space-x-3 ml-12">
-            <div className="w-8 h-8 rounded-full bg-yellow-500 flex-shrink-0"></div>
-            <div className="flex-1 bg-gray-50 p-3 rounded-lg rounded-tl-none">
-              <p className="text-sm font-bold text-gray-900">Team Lead</p>
-              <p className="text-sm text-gray-700">Check the repo documentation, we added a diagram yesterday.</p>
-            </div>
-          </div>
-
+      {/* Main Feed */}
+      <div className="lg:ml-64 xl:mr-80 pt-20 px-4 pb-8">
+        <div className="max-w-2xl mx-auto">
+          <CreatePost />
+          {postsData.map((post, idx) => (
+            <Post key={idx} post={post} />
+          ))}
         </div>
       </div>
     </div>
