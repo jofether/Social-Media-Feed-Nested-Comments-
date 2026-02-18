@@ -10,11 +10,13 @@ export default function CreatePost() {
           JD
         </div>
         <div className="flex-1">
+          {/* [BUG - SPACING] Negative margin -m-8 causes textarea to overflow container
+              [FIX] Remove -m-8 or use standard padding/margin */}
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="What's on your mind?"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none -m-8"
             rows={3}
           />
           <div className="mt-4 flex items-center justify-between">
@@ -35,10 +37,12 @@ export default function CreatePost() {
                 </svg>
               </button>
             </div>
+            {/* [BUG - COLOR & CONTRAST] text-gray-500 on bg-gray-500 is nearly invisible 
+                [FIX] Change to text-gray-100 or use text-white */}
             <button className={`px-6 py-2 rounded-full font-bold transition ${
               content.trim()
                 ? 'bg-blue-500 text-white hover:bg-blue-600 shadow-md'
-                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                : 'bg-gray-500 text-gray-500 cursor-not-allowed'
             }`} disabled={!content.trim()}>
               Post
             </button>

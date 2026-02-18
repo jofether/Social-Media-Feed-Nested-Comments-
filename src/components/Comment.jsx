@@ -9,7 +9,9 @@ export default function Comment({ comment, isReply = false, depth = 0 }) {
   return (
     <div style={{ paddingLeft: `${paddingLeft}rem` }} className="mb-4">
       <div className="flex space-x-3">
-        <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>
+        {/* [BUG - TYPO] w-1 instead of w-10 makes avatar extremely tiny
+            [FIX] w-10 */}
+        <div className={`w-1 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>
           {comment.initials}
         </div>
         <div className="flex-1 min-w-0">
@@ -31,7 +33,9 @@ export default function Comment({ comment, isReply = false, depth = 0 }) {
               </div>
             )}
           </div>
-          <div className="flex items-center space-x-6 mt-2 text-xs text-gray-500">
+          {/* [BUG - COLOR & CONTRAST] text-gray-400 on gray-50 background is nearly invisible
+              [FIX] Change to text-gray-700 or darker color */}
+          <div className="flex items-center space-x-6 mt-2 text-xs text-gray-400">
             <button className="hover:text-blue-500 transition flex items-center space-x-1">
               <span>❤️</span>
               <span>{comment.likes}</span>
