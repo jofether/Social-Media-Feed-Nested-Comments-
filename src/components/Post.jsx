@@ -57,8 +57,6 @@ export default function Post({ post }) {
       )}
 
       {/* Post Stats */}
-      {/* [BUG - SPACING] Negative margin -mt-12 collapses spacing and overlaps content
-          [FIX] Remove -mt-12 or use standard mt-N */}
       <div className="px-4 py-3 border-t border-gray-100 border-b flex justify-between text-sm text-gray-500 -mt-12">
         <span>{post.views} views</span>
         <div className="flex space-x-4">
@@ -69,8 +67,6 @@ export default function Post({ post }) {
       </div>
 
       {/* Post Actions */}
-      {/* [BUG - LAYERS] Using absolute positioning breaks the flex layout, button overlaps content
-          [FIX] Remove absolute and relative, use standard flex layout */}
       <div className="px-4 py-3 flex justify-around relative">
         <button className="flex-1 py-2 flex items-center justify-center space-x-2 text-gray-500 hover:text-blue-500 transition rounded-lg hover:bg-blue-50 absolute top-0 left-0">
           <span>💬</span>

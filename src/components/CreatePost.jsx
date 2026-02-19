@@ -10,8 +10,6 @@ export default function CreatePost() {
           JD
         </div>
         <div className="flex-1">
-          {/* [BUG - SPACING] Negative margin -m-8 causes textarea to overflow container
-              [FIX] Remove -m-8 or use standard padding/margin */}
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -37,8 +35,6 @@ export default function CreatePost() {
                 </svg>
               </button>
             </div>
-            {/* [BUG - COLOR & CONTRAST] text-gray-500 on bg-gray-500 is nearly invisible 
-                [FIX] Change to text-gray-100 or use text-white */}
             <button className={`px-6 py-2 rounded-full font-bold transition ${
               content.trim()
                 ? 'bg-blue-500 text-white hover:bg-blue-600 shadow-md'

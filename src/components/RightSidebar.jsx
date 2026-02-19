@@ -14,8 +14,6 @@ export default function RightSidebar() {
       {/* Suggested Users */}
       <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
         <h3 className="text-xl font-bold text-gray-900 mb-4">Who to follow</h3>
-        {/* [BUG - LAYOUT] flex-col-reverse reverses the order of suggested users, breaking the expected layout
-            [FIX] Remove flex-col-reverse or use flex-col */}
         <div className="space-y-3 flex flex-col-reverse">
           {suggestedUsers.map((user, idx) => (
             <div key={idx} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition">
@@ -25,8 +23,6 @@ export default function RightSidebar() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-gray-900">{user.name}</p>
-                {/* [BUG - TYPO] text-gray-5 is not a valid Tailwind class, should be text-gray-500
-                    [FIX] text-gray-500 */}
                 <p className="text-xs text-gray-5">@{user.handle}</p>
                 </div>
               </div>

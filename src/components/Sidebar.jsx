@@ -22,8 +22,6 @@ export default function Sidebar() {
     <div className="hidden lg:block fixed left-0 top-16 w-64 h-[calc(100vh-4rem)] pp-4 pt-6">
       
       {/* Navigation */}
-      {/* [BUG - LAYOUT] flex-row instead of flex-col causes menu items to stack horizontally
-          [FIX] Remove flex-row or ensure space-y-3 is applied properly */}
       <nav className="space-y-3 mb-8 flex flex-row flex-wrap">
         {menuItems.map((item) => (
           <button
