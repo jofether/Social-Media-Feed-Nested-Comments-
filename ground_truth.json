@@ -1,0 +1,155 @@
+{
+  "repository": "Social Media Feed (Nested Comments)",
+  "bugs": [
+    {
+      "bug_category": "Spacing",
+      "bug_type": "width",
+      "file_modified": "src/components/Comment.jsx",
+      "line_number": 12,
+      "clean_code": "        <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>",
+      "buggy_code": "        <div className={`w-1 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>",
+      "css_selector": "w-1",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Color",
+      "bug_type": "color",
+      "file_modified": "src/components/Comment.jsx",
+      "line_number": 34,
+      "clean_code": "          <div className=\"flex items-center space-x-6 mt-2 text-xs text-gray-500\">",
+      "buggy_code": "          <div className=\"flex items-center space-x-6 mt-2 text-xs text-gray-400\">",
+      "css_selector": "text-gray-400",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Spacing",
+      "bug_type": "margin",
+      "file_modified": "src/components/CreatePost.jsx",
+      "line_number": 17,
+      "clean_code": "            className=\"w-full bg-gray-100 rounded-2xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none\"",
+      "buggy_code": "            className=\"w-full bg-gray-100 rounded-2xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none -m-8\"",
+      "css_selector": "-m-8",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Color",
+      "bug_type": "background-color",
+      "file_modified": "src/components/CreatePost.jsx",
+      "line_number": 43,
+      "clean_code": "                : 'bg-gray-100 text-gray-400 cursor-not-allowed'",
+      "buggy_code": "                : 'bg-gray-500 text-gray-500 cursor-not-allowed'",
+      "css_selector": "bg-gray-500",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layers",
+      "bug_type": "z-index",
+      "file_modified": "src/components/Header.jsx",
+      "line_number": 5,
+      "clean_code": "    <header className=\"fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm\">",
+      "buggy_code": "    <header className=\"fixed top-0 left-0 right-0 z-10 bg-white border-b border-gray-200 shadow-sm\">",
+      "css_selector": "z-10",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Spacing",
+      "bug_type": "margin-top",
+      "file_modified": "src/components/Post.jsx",
+      "line_number": 60,
+      "clean_code": "      <div className=\"px-4 py-3 border-t border-gray-100 border-b flex justify-between text-sm text-gray-500\">",
+      "buggy_code": "      <div className=\"px-4 py-3 border-t border-gray-100 border-b flex justify-between text-sm text-gray-500 -mt-12\">",
+      "css_selector": "-mt-12",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "position",
+      "file_modified": "src/components/Post.jsx",
+      "line_number": 70,
+      "clean_code": "      <div className=\"px-4 py-3 flex justify-around\">",
+      "buggy_code": "      <div className=\"px-4 py-3 flex justify-around relative\">",
+      "css_selector": "relative",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "position",
+      "file_modified": "src/components/Post.jsx",
+      "line_number": 71,
+      "clean_code": "        <button className=\"flex-1 py-2 flex items-center justify-center space-x-2 text-gray-500 hover:text-blue-500 transition rounded-lg hover:bg-blue-50\">",
+      "buggy_code": "        <button className=\"flex-1 py-2 flex items-center justify-center space-x-2 text-gray-500 hover:text-blue-500 transition rounded-lg hover:bg-blue-50 absolute top-0 left-0\">",
+      "css_selector": "absolute",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "flexbox",
+      "file_modified": "src/components/RightSidebar.jsx",
+      "line_number": 17,
+      "clean_code": "        <div className=\"space-y-3\">",
+      "buggy_code": "        <div className=\"space-y-3 flex flex-col-reverse\">",
+      "css_selector": "flex-col-reverse",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Typo",
+      "bug_type": "color",
+      "file_modified": "src/components/RightSidebar.jsx",
+      "line_number": 26,
+      "clean_code": "                  <p className=\"text-xs text-gray-500\">@{user.handle}</p>",
+      "buggy_code": "                <p className=\"text-xs text-gray-5\">@{user.handle}</p>",
+      "css_selector": "text-gray-5",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  ]
+}
