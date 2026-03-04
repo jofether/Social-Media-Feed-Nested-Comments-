@@ -1,0 +1,12 @@
+{
+  "actions": [
+    {
+      "name": "bug-1-ShowComments",
+      "selector": "button:has-text('Show')"
+    },
+    {
+      "name": "bug-2-ShowComments",
+      "selector": "button:has-text('Show')"
+    }
+  ]
+}
