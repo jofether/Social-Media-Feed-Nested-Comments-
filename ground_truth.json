@@ -14,7 +14,7 @@
       "line_number": 12,
       "neg_code": "        <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>",
       "pos_code": "        <div className={`w-1 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${comment.avatarBg}`}>",
-      "css_selector": "div[style*='paddingLeft'] div.flex.space-x-3",
+      "css_selector": "div.rounded-full.flex-shrink-0",
       "bounding_box": {
         "x": 295,
         "y": 750,
@@ -31,7 +31,7 @@
       "line_number": 34,
       "neg_code": "          <div className=\"flex items-center space-x-6 mt-2 text-xs text-gray-500\">",
       "pos_code": "          <div className=\"flex items-center space-x-6 mt-2 text-xs text-gray-400\">",
-      "css_selector": "div[style*='paddingLeft'] button:has-text(\"Reply\")",
+      "css_selector": "div.flex.items-center.space-x-6",
       "bounding_box": {
         "x": 305,
         "y": 785,
